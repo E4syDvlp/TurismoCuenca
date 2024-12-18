@@ -7,6 +7,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import clases.LugaresParaVisitar;
+import java.io.BufferedReader;
+import java.io.FileReader;
 /**
  *
  * @author RYZEN 7
@@ -21,6 +27,7 @@ public class restaurante extends javax.swing.JFrame {
         initComponents();
         mtd_prepararTabla();
         setLocationRelativeTo(null);
+        cargarDatosDesdeArchivo(); 
         tablita.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -41,6 +48,37 @@ public class restaurante extends javax.swing.JFrame {
         modelo = new DefaultTableModel(null, titulos);
         tablita.setModel(modelo);
     }
+ private void cargarDatosDesdeArchivo() {
+    String rutaArchivo = "Registros/datos_restaurantes.txt";
+    try (BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo))) {
+        String linea;
+        while ((linea = reader.readLine()) != null) {
+            String[] datos = linea.split(","); // Suponiendo que los datos están separados por comas
+            modelo.addRow(datos); // Agrega la fila a la tabla
+        }
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(this, "Error al cargar los datos: " + e.getMessage());
+    }
+}
+private void guardarDatosEnArchivo() {
+    // Cambia la ruta a la carpeta "Registros"
+    String rutaArchivo = "Registros/datos_restaurantes.txt";
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo))) {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            String nombreLugar = modelo.getValueAt(i, 0).toString();
+            String ubicacionLugar = modelo.getValueAt(i, 1).toString();
+            String descripcionLugar = modelo.getValueAt(i, 2).toString();
+            String calificacionLugar = modelo.getValueAt(i, 3).toString();
+            
+            // Escribir la fila en el archivo
+            writer.write(nombreLugar + "," + ubicacionLugar + "," + descripcionLugar + "," + calificacionLugar);
+            writer.newLine(); // Nueva línea para la siguiente fila
+        }
+        JOptionPane.showMessageDialog(this, "Datos guardados exitosamente en " + rutaArchivo);
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(this, "Error al guardar los datos: " + e.getMessage());
+    }
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -85,6 +123,11 @@ public class restaurante extends javax.swing.JFrame {
 
         lugar.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         lugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Sauja Bistro Restaurant ", "La guardia ", "Chill & Chela Brew Pub", "Tiesto's" }));
+        lugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lugarActionPerformed(evt);
+            }
+        });
         jPanel1.add(lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 206, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
@@ -205,7 +248,7 @@ public class restaurante extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
-        if (lugar.getSelectedItem() != null && lugar.getSelectedItem().toString().length() > 0) {
+            if (lugar.getSelectedItem() != null && lugar.getSelectedItem().toString().length() > 0) {
             String lugarSeleccionado = lugar.getSelectedItem().toString();
 
             // Validación para verificar si el lugar ya existe en la tabla
@@ -274,6 +317,7 @@ public class restaurante extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Seleccione un lugar");
         }
+             guardarDatosEnArchivo();
     }//GEN-LAST:event_agregarActionPerformed
   private void mtd_limpiar() {
         lugar.setSelectedIndex(0);
@@ -283,34 +327,43 @@ public class restaurante extends javax.swing.JFrame {
 
     }
     private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
-        //"Nombre del lugar", "Ubicacion", "Descripcion", "Calificacion"
         int filasel = tablita.getSelectedRow();
-        if (filasel == -1) {
-            JOptionPane.showMessageDialog(null, "Por favor eleccione una fila!");
-        } else {
-            lugar.setSelectedItem(tablita.getValueAt(filasel, 0).toString());
-            descripcion.setText(tablita.getValueAt(filasel, 1).toString());
-            ubicacion.setText(tablita.getValueAt(filasel, 2).toString());
-            calificacion.setSelectedItem(tablita.getValueAt(filasel, 3).toString());
+    if (filasel == -1) {
+        JOptionPane.showMessageDialog(null, "Por favor seleccione una fila!");
+    } else {
+        lugar.setSelectedItem(tablita.getValueAt(filasel, 0).toString());
+        descripcion.setText(tablita.getValueAt(filasel, 1).toString());
+        ubicacion.setText(tablita.getValueAt(filasel, 2).toString());
+        calificacion.setSelectedItem(tablita.getValueAt(filasel, 3).toString());
 
-            ga = true;
-        }
+        ga = true; // Indica que estamos en modo de edición
+    }
+    
+    // Llama a guardarDatosEnArchivo después de editar
+    guardarDatosEnArchivo();
     }//GEN-LAST:event_editarActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-        int filasel = tablita.getSelectedRow();
-        if (filasel == -1) {
-            JOptionPane.showMessageDialog(null, "No hay ninguna fila selccionada");
-        } else {
-            modelo= (DefaultTableModel) tablita.getModel();
-            modelo.removeRow(filasel);
-        }
+     int filasel = tablita.getSelectedRow();
+    if (filasel == -1) {
+        JOptionPane.showMessageDialog(null, "No hay ninguna fila seleccionada");
+    } else {
+        modelo = (DefaultTableModel) tablita.getModel();
+        modelo.removeRow(filasel);
+        
+        // Llama a guardarDatosEnArchivo después de eliminar
+        guardarDatosEnArchivo();
+    }
     }//GEN-LAST:event_eliminarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         this.dispose();
         new plataformaPrincipal().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void lugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lugarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lugarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -7,6 +7,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 /**
  *
  * @author RYZEN 7
@@ -19,6 +25,8 @@ DefaultTableModel modelo;
     public cafeterias() {
         initComponents();
         setLocationRelativeTo(null);
+                cargarDatosDesdeArchivo(); // Cargar datos al iniciar
+
          mtd_prepararTabla();
         tablita.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -34,6 +42,37 @@ DefaultTableModel modelo;
                 }
             }
         });
+    }
+     private void cargarDatosDesdeArchivo() {
+        String rutaArchivo = "Registros/datos_cafeterias.txt"; // Cambia el nombre del archivo según sea necesario
+        try (BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split(","); // Suponiendo que los datos están separados por comas
+                modelo.addRow(datos); // Agrega la fila a la tabla
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar los datos: " + e.getMessage());
+        }
+    }
+
+    private void guardarDatosEnArchivo() {
+        String rutaArchivo = "Registros/datos_cafeterias.txt"; // Cambia el nombre del archivo según sea necesario
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo))) {
+            for (int i = 0; i < modelo.getRowCount(); i++) {
+                String nombreLugar = modelo.getValueAt(i, 0).toString();
+                String ubicacionLugar = modelo.getValueAt(i, 1).toString();
+                String descripcionLugar = modelo.getValueAt(i, 2).toString();
+                String calificacionLugar = modelo.getValueAt(i, 3).toString();
+                
+                // Escribir la fila en el archivo
+                writer.write(nombreLugar + "," + ubicacionLugar + "," + descripcionLugar + "," + calificacionLugar);
+                writer.newLine(); // Nueva línea para la siguiente fila
+            }
+            JOptionPane.showMessageDialog(this, "Datos guardados exitosamente en " + rutaArchivo);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al guardar los datos: " + e.getMessage());
+        }
     }
    private void mtd_prepararTabla() {
         String titulos[] = {"Nombre del lugar", "Ubicacion", "Descripcion", "Calificacion"};
@@ -53,7 +92,6 @@ DefaultTableModel modelo;
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         lugar = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         calificacion = new javax.swing.JComboBox<>();
@@ -71,6 +109,7 @@ DefaultTableModel modelo;
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,11 +130,6 @@ DefaultTableModel modelo;
         lugar.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         lugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Frato Cafe", "Cafe San Sebas", "Cafe de Ñucallacta", "Gozza Espresso Bar", "Coffe Cor - Cafe de Especialidad", "Jadoco Bistro", "Casa Azul Resto - Bar Gallery", "El frances" }));
         jPanel1.add(lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 206, -1));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Descripcion");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -193,7 +227,7 @@ DefaultTableModel modelo;
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/45.png"))); // NOI18N
         jLabel5.setText("jLabel2");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, -360, 650, 580));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, -450, 650, 580));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/45.png"))); // NOI18N
         jLabel6.setText("jLabel2");
@@ -201,6 +235,11 @@ DefaultTableModel modelo;
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/162.png"))); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-660, -60, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Descripcion");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 590));
 
@@ -297,13 +336,15 @@ DefaultTableModel modelo;
         } else {
             JOptionPane.showMessageDialog(null, "Seleccione un lugar");
         }
+                guardarDatosEnArchivo(); // Guardar después de agregar
+
     }//GEN-LAST:event_agregarActionPerformed
 
     private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
         //"Nombre del lugar", "Ubicacion", "Descripcion", "Calificacion"
-        int filasel = tablita.getSelectedRow();
+       int filasel = tablita.getSelectedRow();
         if (filasel == -1) {
-            JOptionPane.showMessageDialog(null, "Por favor eleccione una fila!");
+            JOptionPane.showMessageDialog(null, "Por favor seleccione una fila!");
         } else {
             lugar.setSelectedItem(tablita.getValueAt(filasel, 0).toString());
             descripcion.setText(tablita.getValueAt(filasel, 1).toString());
@@ -312,6 +353,7 @@ DefaultTableModel modelo;
 
             ga = true;
         }
+        guardarDatosEnArchivo(); // Guardar después de editar
     }//GEN-LAST:event_editarActionPerformed
    
     private boolean mtd_validacioningreso(String dato_validacion) {
@@ -333,12 +375,13 @@ DefaultTableModel modelo;
     }
     
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-        int filasel = tablita.getSelectedRow();
+  int filasel = tablita.getSelectedRow();
         if (filasel == -1) {
-            JOptionPane.showMessageDialog(null, "No hay ninguna fila selccionada");
+            JOptionPane.showMessageDialog(null, "No hay ninguna fila seleccionada");
         } else {
-            modelo= (DefaultTableModel) tablita.getModel();
+            modelo = (DefaultTableModel) tablita.getModel();
             modelo.removeRow(filasel);
+            guardarDatosEnArchivo(); // Guardar después de eliminar
         }
     }//GEN-LAST:event_eliminarActionPerformed
 
@@ -391,11 +434,11 @@ DefaultTableModel modelo;
     private javax.swing.JButton eliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

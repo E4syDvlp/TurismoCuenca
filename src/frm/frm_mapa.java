@@ -21,6 +21,7 @@ public class frm_mapa extends JFrame {  // Cambié JInternalFrame por JFrame
     public frm_mapa() {
         initComponents(); // Llamamos a initComponents
         cargarImagen();   // Llamamos a cargarImagen para mostrar la imagen
+        setLocationRelativeTo(null);
     }
 
     private void cargarImagen() {

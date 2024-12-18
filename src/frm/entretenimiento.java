@@ -7,6 +7,11 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
 /**
  *
  * @author RYZEN 7
@@ -21,6 +26,8 @@ public class entretenimiento extends javax.swing.JFrame {
         initComponents();
             mtd_prepararTabla();
             setLocationRelativeTo(null);
+                    cargarDatosDesdeArchivo(); // Cargar datos al iniciar
+
         
         tablita.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -36,6 +43,37 @@ public class entretenimiento extends javax.swing.JFrame {
                 }
             }
         });
+    }
+      private void cargarDatosDesdeArchivo() {
+        String rutaArchivo = "Registros/datos_entretenimiento.txt"; // Cambia el nombre del archivo según sea necesario
+        try (BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split(","); // Suponiendo que los datos están separados por comas
+                modelo.addRow(datos); // Agrega la fila a la tabla
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar los datos: " + e.getMessage());
+        }
+    }
+
+    private void guardarDatosEnArchivo() {
+        String rutaArchivo = "Registros/datos_entretenimiento.txt"; // Cambia el nombre del archivo según sea necesario
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo))) {
+            for (int i = 0; i < modelo.getRowCount(); i++) {
+                String nombreLugar = modelo.getValueAt(i, 0).toString();
+                String ubicacionLugar = modelo.getValueAt(i, 1).toString();
+                String descripcionLugar = modelo.getValueAt(i, 2).toString();
+                String calificacionLugar = modelo.getValueAt(i, 3).toString();
+                
+                // Escribir la fila en el archivo
+                writer.write(nombreLugar + "," + ubicacionLugar + "," + descripcionLugar + "," + calificacionLugar);
+                writer.newLine(); // Nueva línea para la siguiente fila
+            }
+            JOptionPane.showMessageDialog(this, "Datos guardados exitosamente en " + rutaArchivo);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al guardar los datos: " + e.getMessage());
+        }
     }
  private void mtd_prepararTabla() {
         String titulos[] = {"Nombre del lugar", "Ubicacion", "Descripcion", "Calificacion"};
@@ -302,13 +340,14 @@ case "Museo del Sombrero de Paja Toquilla":
         } else {
             JOptionPane.showMessageDialog(null, "Seleccione un lugar");
         }
+        guardarDatosEnArchivo();
     }//GEN-LAST:event_agregarActionPerformed
 
     private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
         //"Nombre del lugar", "Ubicacion", "Descripcion", "Calificacion"
         int filasel = tablita.getSelectedRow();
         if (filasel == -1) {
-            JOptionPane.showMessageDialog(null, "Por favor eleccione una fila!");
+            JOptionPane.showMessageDialog(null, "Por favor seleccione una fila!");
         } else {
             lugar.setSelectedItem(tablita.getValueAt(filasel, 0).toString());
             descripcion.setText(tablita.getValueAt(filasel, 1).toString());
@@ -317,15 +356,17 @@ case "Museo del Sombrero de Paja Toquilla":
 
             ga = true;
         }
+        guardarDatosEnArchivo(); // Guardar después de editar
     }//GEN-LAST:event_editarActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-        int filasel = tablita.getSelectedRow();
+         int filasel = tablita.getSelectedRow();
         if (filasel == -1) {
-            JOptionPane.showMessageDialog(null, "No hay ninguna fila selccionada");
+            JOptionPane.showMessageDialog(null, "No hay ninguna fila seleccionada");
         } else {
-            modelo= (DefaultTableModel) tablita.getModel();
+            modelo = (DefaultTableModel) tablita.getModel();
             modelo.removeRow(filasel);
+            guardarDatosEnArchivo(); // Guardar después de eliminar
         }
     }//GEN-LAST:event_eliminarActionPerformed
 

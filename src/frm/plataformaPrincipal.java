@@ -45,6 +45,11 @@ public class plataformaPrincipal extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         btnAbrirMapa = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -122,7 +127,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 btnVolverLoginActionPerformed(evt);
             }
         });
-        jPanel3.add(btnVolverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 210, 50));
+        jPanel3.add(btnVolverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 210, 50));
 
         btnProximasActividades.setBackground(new java.awt.Color(0, 204, 204));
         btnProximasActividades.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -132,7 +137,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 btnProximasActividadesActionPerformed(evt);
             }
         });
-        jPanel3.add(btnProximasActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 330, 50));
+        jPanel3.add(btnProximasActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 330, 50));
 
         btnCafeterias.setBackground(new java.awt.Color(153, 255, 153));
         btnCafeterias.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -142,7 +147,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 btnCafeteriasActionPerformed(evt);
             }
         });
-        jPanel3.add(btnCafeterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 210, 50));
+        jPanel3.add(btnCafeterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 210, 50));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 153));
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -152,7 +157,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 300, 50));
+        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 300, 50));
 
         jButton5.setBackground(new java.awt.Color(51, 255, 102));
         jButton5.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -162,7 +167,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 300, 50));
+        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 300, 50));
 
         btnAbrirMapa.setBackground(new java.awt.Color(51, 255, 204));
         btnAbrirMapa.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -172,7 +177,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 btnAbrirMapaActionPerformed(evt);
             }
         });
-        jPanel3.add(btnAbrirMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 210, 50));
+        jPanel3.add(btnAbrirMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 210, 50));
 
         jButton8.setBackground(new java.awt.Color(153, 255, 255));
         jButton8.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -182,9 +187,31 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 210, 50));
+        jPanel3.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 210, 50));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 590, 370));
+        jButton1.setBackground(new java.awt.Color(102, 255, 204));
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
+        jButton1.setText("Ver Restaurantes");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, 190, 50));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (12) (1).png"))); // NOI18N
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 50, 50));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (13) (1).png"))); // NOI18N
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 50, 50));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (14) (1).png"))); // NOI18N
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 50, 50));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (15) (1).png"))); // NOI18N
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 50, 50));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 690, 370));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/159.png"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -283,6 +310,13 @@ preferenciasUsuario preferenciasXD = new preferenciasUsuario();
                     paseo.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         restaurante quericeh = new restaurante();
+                    dispose();
+                    quericeh.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -325,17 +359,22 @@ preferenciasUsuario preferenciasXD = new preferenciasUsuario();
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnProximasActividades;
     private javax.swing.JButton btnVolverLogin;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
