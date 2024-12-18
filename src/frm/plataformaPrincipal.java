@@ -50,6 +50,9 @@ public class plataformaPrincipal extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -137,7 +140,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 btnProximasActividadesActionPerformed(evt);
             }
         });
-        jPanel3.add(btnProximasActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 330, 50));
+        jPanel3.add(btnProximasActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 330, 50));
 
         btnCafeterias.setBackground(new java.awt.Color(153, 255, 153));
         btnCafeterias.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -210,6 +213,15 @@ public class plataformaPrincipal extends javax.swing.JFrame {
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (15) (1).png"))); // NOI18N
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 50, 50));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (16) (1).png"))); // NOI18N
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 50, 50));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (17) (1).png"))); // NOI18N
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 50, 50));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (18) (1).png"))); // NOI18N
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 50, 50));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 690, 370));
 
@@ -367,6 +379,9 @@ preferenciasUsuario preferenciasXD = new preferenciasUsuario();
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
