@@ -40,10 +40,9 @@ public class plataformaPrincipal extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         btnVolverLogin = new javax.swing.JButton();
         btnProximasActividades = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnCafeterias = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         btnAbrirMapa = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -72,7 +71,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoAppTurismo (1).png"))); // NOI18N
         jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 80, 80));
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, -1));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 450, -1));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -135,21 +134,35 @@ public class plataformaPrincipal extends javax.swing.JFrame {
         });
         jPanel3.add(btnProximasActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 330, 50));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
-        jButton3.setText("Mapa de la Ciudad");
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 210, 50));
+        btnCafeterias.setBackground(new java.awt.Color(153, 255, 153));
+        btnCafeterias.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
+        btnCafeterias.setText("Ver Cafeterias");
+        btnCafeterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCafeteriasActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnCafeterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 210, 50));
 
+        jButton4.setBackground(new java.awt.Color(255, 255, 153));
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
-        jButton4.setText("Mapa de la Ciudad");
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 210, 50));
+        jButton4.setText("Ver Sitios de Entretenimiento");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 300, 50));
 
+        jButton5.setBackground(new java.awt.Color(51, 255, 102));
         jButton5.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
-        jButton5.setText("Mapa de la Ciudad");
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 210, 50));
-
-        jButton6.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
-        jButton6.setText("Mapa de la Ciudad");
-        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 210, 50));
+        jButton5.setText("Ver Lugares Diversos a Visitar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 300, 50));
 
         btnAbrirMapa.setBackground(new java.awt.Color(51, 255, 204));
         btnAbrirMapa.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -230,7 +243,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
 
     private void btnAbrirMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbrirMapaActionPerformed
         // TODO add your handling code here:
-         mapa mapaCuenca = new mapa();
+         frm_mapa mapaCuenca = new frm_mapa();
                     dispose();
                     mapaCuenca.setVisible(true);
     }//GEN-LAST:event_btnAbrirMapaActionPerformed
@@ -248,6 +261,27 @@ preferenciasUsuario preferenciasXD = new preferenciasUsuario();
                     dispose();
                     proximaActividad.setVisible(true);
     }//GEN-LAST:event_btnProximasActividadesActionPerformed
+
+    private void btnCafeteriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCafeteriasActionPerformed
+        // TODO add your handling code here:
+        cafeterias cafeXd = new cafeterias();
+                    dispose();
+                    cafeXd.setVisible(true);
+    }//GEN-LAST:event_btnCafeteriasActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+            entretenimiento entretenerse = new entretenimiento();
+                    dispose();
+                    entretenerse.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+          lugaresVisita paseo = new lugaresVisita();
+                    dispose();
+                    paseo.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,13 +321,12 @@ preferenciasUsuario preferenciasXD = new preferenciasUsuario();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton abrirRegistro;
     private javax.swing.JButton btnAbrirMapa;
+    private javax.swing.JButton btnCafeterias;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnProximasActividades;
     private javax.swing.JButton btnVolverLogin;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

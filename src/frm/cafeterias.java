@@ -18,6 +18,7 @@ DefaultTableModel modelo;
     
     public cafeterias() {
         initComponents();
+        setLocationRelativeTo(null);
          mtd_prepararTabla();
         tablita.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -65,6 +66,11 @@ DefaultTableModel modelo;
         ubicacion = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablita = new javax.swing.JTable();
+        btnRegresar = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,70 +78,88 @@ DefaultTableModel modelo;
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setFont(new java.awt.Font("Krungthep", 0, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Felix Titling", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Cafeteria");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre de lugar");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 51, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
+        lugar.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         lugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Frato Cafe", "Cafe San Sebas", "Cafe de Ñucallacta", "Gozza Espresso Bar", "Coffe Cor - Cafe de Especialidad", "Jadoco Bistro", "Casa Azul Resto - Bar Gallery", "El frances" }));
-        jPanel1.add(lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 48, 206, -1));
+        jPanel1.add(lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 206, -1));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Descripcion");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 88, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Ubicacion");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 208, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Calificacion");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 314, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
+        calificacion.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         calificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Califique ", "1", "2", "3", "4", "5" }));
-        jPanel1.add(calificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 311, 114, -1));
+        jPanel1.add(calificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 114, -1));
 
+        agregar.setBackground(new java.awt.Color(0, 0, 255));
+        agregar.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
+        agregar.setForeground(new java.awt.Color(255, 255, 255));
         agregar.setText("Agregar");
         agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agregarActionPerformed(evt);
             }
         });
-        jPanel1.add(agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 486, -1, -1));
+        jPanel1.add(agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 110, 50));
 
+        editar.setBackground(new java.awt.Color(153, 153, 255));
+        editar.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         editar.setText("Editar");
         editar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editarActionPerformed(evt);
             }
         });
-        jPanel1.add(editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 486, -1, -1));
+        jPanel1.add(editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 110, 50));
 
+        eliminar.setBackground(new java.awt.Color(255, 0, 0));
+        eliminar.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
+        eliminar.setForeground(new java.awt.Color(255, 255, 255));
         eliminar.setText("Eliminar");
         eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(304, 486, -1, -1));
+        jPanel1.add(eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, 110, 50));
 
         descripcion.setEditable(false);
         descripcion.setColumns(20);
+        descripcion.setFont(new java.awt.Font("Segoe UI Variable", 1, 12)); // NOI18N
         descripcion.setRows(5);
+        descripcion.setText("El texto se generará automáticamente al elegir el lugar a\nvisitar.");
         jScrollPane2.setViewportView(descripcion);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 340, 90));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 350, 70));
 
         ubicacion.setEditable(false);
         ubicacion.setColumns(20);
+        ubicacion.setFont(new java.awt.Font("Segoe UI Variable", 1, 12)); // NOI18N
         ubicacion.setRows(5);
+        ubicacion.setText("El texto se generará automáticamente al elegir el lugar a\nvisitar.");
         jScrollPane3.setViewportView(ubicacion);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 202, 330, 80));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 350, 60));
 
         tablita.setBackground(new java.awt.Color(204, 255, 153));
         tablita.setModel(new javax.swing.table.DefaultTableModel(
@@ -151,9 +175,34 @@ DefaultTableModel modelo;
         ));
         jScrollPane1.setViewportView(tablita);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 351, -1, 117));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 520, 117));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 580));
+        btnRegresar.setBackground(new java.awt.Color(204, 0, 0));
+        btnRegresar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 170, 40));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoAppTurismo (1).png"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 80, 80));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/45.png"))); // NOI18N
+        jLabel5.setText("jLabel2");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, -360, 650, 580));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/45.png"))); // NOI18N
+        jLabel6.setText("jLabel2");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 650, 580));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/162.png"))); // NOI18N
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-660, -60, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 590));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -170,37 +219,37 @@ DefaultTableModel modelo;
 
             // Actualizamos los JTextFields en el botón agregar
             switch (lugarSeleccionado) {
-                case "Frato Cafe":
+ case "Frato Cafe":
                 descripcion.setText("Excelente atención con un ambiente agradable y comodo, además sus productos son frescos y exquisitos.");
-                ubicacion.setText("https://www.bing.com/maps?osid=a5d1bc87-1ec5-43dc-b0fd-6c3beb780d20&cp=-2.917668~-79.014552&lvl=16&pi=0&v=2&sV=2&form=S00027");
+                ubicacion.setText("https://maps.app.goo.gl/8fxp5dsukSaqBv649");
                 break;
                 case "Cafe San Sebas":
                 descripcion.setText("Variedad de productos y atención excelente");
-                ubicacion.setText("https://www.bing.com/maps?osid=b47c6438-5d7f-4586-be0f-8e6de8977b9a&cp=40.073967~-2.137935&lvl=16&pi=0&imgid=ed88a2cc-cde6-401d-8715-3c876a1bd692&v=2&sV=2&form=S00027");
+                ubicacion.setText("https://maps.app.goo.gl/HaC4HqTKvjLshyWN7");
                 break;
                 case "Cafe de Ñucallacta":
                 descripcion.setText("Una de las mejores opciones si deseas desayunar en Cuenca");
-                ubicacion.setText("https://www.bing.com/maps?osid=43d1ae2e-7fca-41a0-993c-ca9f07f3b228&cp=-2.898629~-78.998878&lvl=18.34&pi=0&v=2&sV=2&form=S00027");
+                ubicacion.setText("https://maps.app.goo.gl/MqtKUpCwVcxoL84h7");
                 break;
                 case "Gozza Espresso Bar":
                 descripcion.setText("Ubicado en todo el corazón de la vida nocturna, muy buen pint para ir a cenar y beber, variedad de comida vegana");
-                ubicacion.setText("https://www.bing.com/maps?osid=b6db3f9f-3d29-460b-8da5-7d48d4f38e62&cp=-2.898629~-78.998878&lvl=18.34&pi=0&imgid=b1cf9de4-c429-44c6-9783-2f7b8fc4686a&v=2&sV=2&form=S00027");
+                ubicacion.setText("https://maps.app.goo.gl/H6FdexJrsHSyefQ89");
                 break;
                 case "Coffe Cor - Cafe de Especialidad":
                 descripcion.setText("Lugar acogedor y relajante");
-                ubicacion.setText("https://www.bing.com/maps?osid=2e4776bf-48b0-425d-8faa-bbc0496e8919&cp=-2.920883~-79.022191&lvl=16&pi=0&imgid=8a5362e5-bc39-4513-905b-f2a3b671caf5&v=2&sV=2&form=S00027");
+                ubicacion.setText("https://maps.app.goo.gl/Lw4LZFNdVr9Hdytd7");
                 break;
                 case "Jadoco Bistro":
                 descripcion.setText("Comidas, cenas, brunch, plub con cerveza artesanal");
-                ubicacion.setText("https://www.bing.com/maps?osid=382a21d4-c659-454a-89ff-2592fd1b4f20&cp=-2.87305~-79.004338&lvl=16&pi=0&imgid=a2c0b51d-56ed-4b28-bd5b-0d72cea65f75&v=2&sV=2&form=S00027");
+                ubicacion.setText("https://maps.app.goo.gl/kjEGV832YsTNSAsAA");
                 break;
                 case "Casa Azul Resto - Bar Gallery":
                 descripcion.setText("Comida mexicana - Americana");
-                ubicacion.setText("https://www.bing.com/maps?osid=50efe85f-75d9-4737-881c-9eec8e768814&cp=-2.876652~-78.98676&lvl=15.91&pi=0&v=2&sV=2&form=S00027");
+                ubicacion.setText("https://maps.app.goo.gl/mkwHktf4HFc4NFn76");
                 break;
                 case "El frances":
                 descripcion.setText("Comida y cafeteria francesa con opciones vegetarianas");
-                ubicacion.setText("https://www.bing.com/maps?osid=2beb3393-35a1-4fb1-aee3-d7ff55204f5a&cp=-2.91056~-78.997631&lvl=16.125725&pi=0&imgid=78776add-44e2-4824-a1af-b2b918f9f5c9&v=2&sV=2&form=S00027");
+                ubicacion.setText("https://maps.app.goo.gl/6EHmwirsFvTs8LfE7");
                 break;
                 default:
                 descripcion.setText("");
@@ -293,6 +342,11 @@ DefaultTableModel modelo;
         }
     }//GEN-LAST:event_eliminarActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        this.dispose();
+        new plataformaPrincipal().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -330,15 +384,20 @@ DefaultTableModel modelo;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> calificacion;
     private javax.swing.JTextArea descripcion;
     private javax.swing.JButton editar;
     private javax.swing.JButton eliminar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

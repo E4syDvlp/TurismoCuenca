@@ -59,7 +59,6 @@ tablaLugar.setModel(modelox);
         txtTipoLugar = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         btnEliminar = new javax.swing.JButton();
-        btnRegresar = new javax.swing.JButton();
         txtDireccion = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
@@ -68,6 +67,7 @@ tablaLugar.setModel(modelox);
         jLabel12 = new javax.swing.JLabel();
         txtDescripcion = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
+        btnRegresar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -81,7 +81,7 @@ tablaLugar.setModel(modelox);
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Sylfaen", 1, 48)); // NOI18N
@@ -93,9 +93,9 @@ tablaLugar.setModel(modelox);
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 490, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoAppTurismo (1).png"))); // NOI18N
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, 80, 80));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 80, 80));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 110));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 110));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
@@ -143,6 +143,7 @@ tablaLugar.setModel(modelox);
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 360, 10));
 
+        tablaLugar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tablaLugar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -188,17 +189,6 @@ tablaLugar.setModel(modelox);
             }
         });
         jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 560, 160, 40));
-
-        btnRegresar.setBackground(new java.awt.Color(204, 0, 0));
-        btnRegresar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegresar.setText("Regresar");
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 170, 40));
 
         txtDireccion.setBackground(new java.awt.Color(204, 204, 204));
         txtDireccion.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -263,6 +253,17 @@ tablaLugar.setModel(modelox);
 
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
         jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 360, 10));
+
+        btnRegresar.setBackground(new java.awt.Color(204, 0, 0));
+        btnRegresar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, 170, 40));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 870, 610));
 
@@ -430,11 +431,6 @@ guardarActividadEnArchivo(obj);
     }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        this.dispose();
-        new xd().setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegresarActionPerformed
-
     private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDireccionActionPerformed
@@ -461,6 +457,11 @@ guardarActividadEnArchivo(obj);
     private void txtDescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescripcionKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDescripcionKeyTyped
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        this.dispose();
+        new plataformaPrincipal().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
