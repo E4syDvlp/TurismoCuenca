@@ -47,36 +47,39 @@ public class lugaresVisita extends javax.swing.JFrame {
         });
     }
     private void cargarDatosDesdeArchivo() {
-        String rutaArchivo = "Registros/datos_lugares.txt"; // Cambia el nombre del archivo según sea necesario
-        try (BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo))) {
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                String[] datos = linea.split(","); // Suponiendo que los datos están separados por comas
-                modelo.addRow(datos); // Agrega la fila a la tabla
-            }
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error al cargar los datos: " + e.getMessage());
+    
+    String rutaArchivo = "Registros/datos_lugares.txt"; // Cambia el nombre del archivo según sea necesario
+    try (BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo))) {
+        String linea;
+        while ((linea = reader.readLine()) != null) {
+            String[] datos = linea.split(","); // Suponiendo que los datos están separados por comas
+            modelo.addRow(datos); // Agrega la fila a la tabla
         }
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(this, "Error al cargar los datos: " + e.getMessage());
     }
 
-    private void guardarDatosEnArchivo() {
-        String rutaArchivo = "Registros/datos_lugares.txt"; // Cambia el nombre del archivo según sea necesario
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo))) {
-            for (int i = 0; i < modelo.getRowCount(); i++) {
-                String nombreLugar = modelo.getValueAt(i, 0).toString();
-                String ubicacionLugar = modelo.getValueAt(i, 1).toString();
-                String descripcionLugar = modelo.getValueAt(i, 2).toString();
-                String calificacionLugar = modelo.getValueAt(i, 3).toString();
-                
-                // Escribir la fila en el archivo
-                writer.write(nombreLugar + "," + ubicacionLugar + "," + descripcionLugar + "," + calificacionLugar);
-                writer.newLine(); // Nueva línea para la siguiente fila
-            }
-            JOptionPane.showMessageDialog(this, "Datos guardados exitosamente en " + rutaArchivo);
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error al guardar los datos: " + e.getMessage());
-        }
     }
+
+private void guardarDatosEnArchivo() {
+    String rutaArchivo = "Registros/datos_lugares.txt"; // Cambia el nombre del archivo según sea necesario
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo))) {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            String nombreLugar = modelo.getValueAt(i, 0).toString();
+            String ubicacionLugar = modelo.getValueAt(i, 1).toString();
+            String descripcionLugar = modelo.getValueAt(i, 2).toString();
+            String calificacionLugar = modelo.getValueAt(i, 3).toString();
+            
+            // Escribir la fila en el archivo
+            writer.write(nombreLugar + "," + ubicacionLugar + "," + descripcionLugar + "," + calificacionLugar);
+            writer.newLine(); // Nueva línea para la siguiente fila
+        }
+        JOptionPane.showMessageDialog(this, "Datos guardados exitosamente en " + rutaArchivo);
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(this, "Error al guardar los datos: " + e.getMessage());
+    }
+}
+
  private void mtd_prepararTabla() {
         String titulos[] = {"Nombre del lugar", "Ubicacion", "Descripcion", "Calificacion"};
         modelo = new DefaultTableModel(null, titulos);

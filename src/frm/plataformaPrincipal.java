@@ -29,6 +29,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        btnVolverLogin = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -38,7 +39,6 @@ public class plataformaPrincipal extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         abrirRegistro = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        btnVolverLogin = new javax.swing.JButton();
         btnProximasActividades = new javax.swing.JButton();
         btnCafeterias = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -53,6 +53,10 @@ public class plataformaPrincipal extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        btnCafeterias1 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -64,6 +68,17 @@ public class plataformaPrincipal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnVolverLogin.setBackground(new java.awt.Color(255, 0, 0));
+        btnVolverLogin.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
+        btnVolverLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolverLogin.setText("Volver al login");
+        btnVolverLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverLoginActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnVolverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 510, 210, 50));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -121,17 +136,6 @@ public class plataformaPrincipal extends javax.swing.JFrame {
         jLabel10.setText("©Turismo por Cuenca - 2024");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 230, -1));
 
-        btnVolverLogin.setBackground(new java.awt.Color(255, 0, 0));
-        btnVolverLogin.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
-        btnVolverLogin.setForeground(new java.awt.Color(255, 255, 255));
-        btnVolverLogin.setText("Volver al login");
-        btnVolverLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverLoginActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btnVolverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 210, 50));
-
         btnProximasActividades.setBackground(new java.awt.Color(0, 204, 204));
         btnProximasActividades.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
         btnProximasActividades.setText("Agendar próximas actividades");
@@ -140,7 +144,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 btnProximasActividadesActionPerformed(evt);
             }
         });
-        jPanel3.add(btnProximasActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 330, 50));
+        jPanel3.add(btnProximasActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 330, 50));
 
         btnCafeterias.setBackground(new java.awt.Color(153, 255, 153));
         btnCafeterias.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -150,7 +154,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 btnCafeteriasActionPerformed(evt);
             }
         });
-        jPanel3.add(btnCafeterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 210, 50));
+        jPanel3.add(btnCafeterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 210, 50));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 153));
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -160,7 +164,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 300, 50));
+        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 300, 50));
 
         jButton5.setBackground(new java.awt.Color(51, 255, 102));
         jButton5.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -170,7 +174,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 300, 50));
+        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 300, 50));
 
         btnAbrirMapa.setBackground(new java.awt.Color(51, 255, 204));
         btnAbrirMapa.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -180,7 +184,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 btnAbrirMapaActionPerformed(evt);
             }
         });
-        jPanel3.add(btnAbrirMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 210, 50));
+        jPanel3.add(btnAbrirMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 210, 50));
 
         jButton8.setBackground(new java.awt.Color(153, 255, 255));
         jButton8.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -190,7 +194,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 210, 50));
+        jPanel3.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 210, 50));
 
         jButton1.setBackground(new java.awt.Color(102, 255, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
@@ -200,30 +204,56 @@ public class plataformaPrincipal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, 190, 50));
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 190, 50));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (12) (1).png"))); // NOI18N
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 50, 50));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 50));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (13) (1).png"))); // NOI18N
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 50, 50));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 50, 50));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (14) (1).png"))); // NOI18N
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 50, 50));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 50, 50));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (15) (1).png"))); // NOI18N
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 50, 50));
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 50, 50));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (16) (1).png"))); // NOI18N
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 50, 50));
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 50, 50));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (17) (1).png"))); // NOI18N
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 50, 50));
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 50, 50));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (18) (1).png"))); // NOI18N
-        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 50, 50));
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 50, 50));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 690, 370));
+        jButton2.setBackground(new java.awt.Color(255, 153, 0));
+        jButton2.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
+        jButton2.setText("Ver Guias");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 190, 50));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (19) (1).png"))); // NOI18N
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 50, 50));
+
+        btnCafeterias1.setBackground(new java.awt.Color(51, 255, 204));
+        btnCafeterias1.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
+        btnCafeterias1.setText("Foro de noticias y recomendaciones");
+        btnCafeterias1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCafeterias1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnCafeterias1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 350, 50));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image.png"))); // NOI18N
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 50, 50));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 690, 370));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/159.png"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -329,6 +359,20 @@ preferenciasUsuario preferenciasXD = new preferenciasUsuario();
                     quericeh.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         guiasFrm guia = new guiasFrm();
+                    dispose();
+                    guia.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnCafeterias1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCafeterias1ActionPerformed
+        // TODO add your handling code here:
+              foroNoticiasfrm foro = new foroNoticiasfrm();
+                    dispose();
+                    foro.setVisible(true);
+    }//GEN-LAST:event_btnCafeterias1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -368,10 +412,12 @@ preferenciasUsuario preferenciasXD = new preferenciasUsuario();
     private javax.swing.JButton abrirRegistro;
     private javax.swing.JButton btnAbrirMapa;
     private javax.swing.JButton btnCafeterias;
+    private javax.swing.JButton btnCafeterias1;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnProximasActividades;
     private javax.swing.JButton btnVolverLogin;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton8;
@@ -382,6 +428,8 @@ preferenciasUsuario preferenciasXD = new preferenciasUsuario();
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -109,6 +109,8 @@ private void guardarDatosEnArchivo() {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        coordenadas = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -161,7 +163,7 @@ private void guardarDatosEnArchivo() {
         ubicacion.setText("El texto se generará automáticamente al elegir el lugar a\nvisitar.\n");
         jScrollPane3.setViewportView(ubicacion);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 370, 60));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 370, 60));
 
         calificacion.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         calificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Califique ", "1", "2", "3", "4", "5" }));
@@ -186,7 +188,7 @@ private void guardarDatosEnArchivo() {
         ));
         jScrollPane1.setViewportView(tablita);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 530, 110));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 590, 110));
 
         agregar.setBackground(new java.awt.Color(0, 0, 255));
         agregar.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
@@ -241,6 +243,15 @@ private void guardarDatosEnArchivo() {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoAppTurismo (1).png"))); // NOI18N
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 80, 80));
+
+        coordenadas.setEditable(false);
+        coordenadas.setColumns(20);
+        coordenadas.setFont(new java.awt.Font("Segoe UI Variable", 1, 12)); // NOI18N
+        coordenadas.setRows(5);
+        coordenadas.setText("Campo de coordenadas\n (generado automaticamente)");
+        jScrollPane4.setViewportView(coordenadas);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 370, 180, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 580));
 
@@ -404,6 +415,7 @@ private void guardarDatosEnArchivo() {
     private javax.swing.JButton agregar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> calificacion;
+    private javax.swing.JTextArea coordenadas;
     private javax.swing.JTextArea descripcion;
     private javax.swing.JButton editar;
     private javax.swing.JButton eliminar;
@@ -419,6 +431,7 @@ private void guardarDatosEnArchivo() {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JComboBox<String> lugar;
     private javax.swing.JTable tablita;
     private javax.swing.JTextArea ubicacion;

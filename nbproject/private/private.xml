@@ -3,16 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/src/frm/cafeterias.java</file>
-            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/src/frm/restaurante.java</file>
-            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/src/frm/registroUsuario.java</file>
-            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/src/frm/frm_mapa.java</file>
-            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/src/frm/plataformaPrincipal.java</file>
-            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/src/frm/entretenimiento.java</file>
-            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/src/frm/xd.java</file>
-            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/src/frm/preferenciasUsuario.java</file>
-            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/src/frm/agendarNuevasActividades.java</file>
-            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/src/frm/lugaresVisita.java</file>
+            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/turismoPorCuencaApp/src/clases/guia.java</file>
+            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/turismoPorCuencaApp/src/frm/lugaresVisita.java</file>
+            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/turismoPorCuencaApp/src/frm/guiasFrm.java</file>
+            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/turismoPorCuencaApp/src/frm/plataformaPrincipal.java</file>
+            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/turismoPorCuencaApp/src/frm/preferenciasUsuario.java</file>
+            <file>file:/C:/Users/RYZEN%207/Documents/NetBeansProjects/turismoPorCuencaApp/turismoPorCuencaApp/src/frm/xd.java</file>
         </group>
     </open-files>
 </project-private>
