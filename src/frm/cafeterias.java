@@ -25,9 +25,10 @@ DefaultTableModel modelo;
     public cafeterias() {
         initComponents();
         setLocationRelativeTo(null);
-                cargarDatosDesdeArchivo(); // Cargar datos al iniciar
+                // Cargar datos al iniciar
 
          mtd_prepararTabla();
+          cargarDatosDesdeArchivo();
         tablita.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
