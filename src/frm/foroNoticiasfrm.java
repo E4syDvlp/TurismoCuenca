@@ -15,6 +15,7 @@ public class foroNoticiasfrm extends javax.swing.JFrame {
      */
     public foroNoticiasfrm() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -118,6 +119,11 @@ public class foroNoticiasfrm extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(51, 204, 0));
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jButton1.setText("Siguiente");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 570, 170, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 610));
@@ -133,6 +139,13 @@ public class foroNoticiasfrm extends javax.swing.JFrame {
     private void btnRegresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegresar1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        foroNoticias2 foro2 = new foroNoticias2();
+                    dispose();
+                    foro2.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

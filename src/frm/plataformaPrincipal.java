@@ -312,7 +312,7 @@ public class plataformaPrincipal extends javax.swing.JFrame {
 
     private void btnAbrirMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbrirMapaActionPerformed
         // TODO add your handling code here:
-         frm_mapa mapaCuenca = new frm_mapa();
+         frm_final mapaCuenca = new frm_final();
                     dispose();
                     mapaCuenca.setVisible(true);
     }//GEN-LAST:event_btnAbrirMapaActionPerformed
